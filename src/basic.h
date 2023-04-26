@@ -25,6 +25,14 @@ static std::vector<std::vector<int>> random_vec_generator(int num, int vec_size 
 	return res;
 }
 
+static int random_int(int min, int max)
+{
+	std::random_device seed;//硬件生成随机数种子
+	std::ranlux48 engine(seed());//利用种子生成随机数引擎
+	std::uniform_int_distribution<> contentdistrib(min, max);//设置随机数范围，并为均匀分布
+	return contentdistrib(engine);
+}
+
 static void print_vec(const std::vector<int>& vec)
 {
 	for (auto x : vec)

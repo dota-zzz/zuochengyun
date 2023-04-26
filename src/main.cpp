@@ -1,16 +1,18 @@
 #include "sort.h"
 #include "xor.h"
 #include "binarysearch.h"
+#include "list.h"
+#include <unordered_set>
 
 int main()
 {
 	//测试排序
-	auto vecs = random_vec_generator(1000, 1000, -5000, 5000);
+	auto vecs = random_vec_generator(1000, 20, 0, 200);
 	for (const auto& vec : vecs)
 	{
 		auto v1 = vec;
 		auto v2 = vec;
-		sort::heap_sort(v1);
+		sort::radix_sort(v1);
 		std::sort(v2.begin(), v2.end());
 		if (v1 != v2)
 		{
@@ -33,7 +35,11 @@ int main()
 	//测试小和,逆序对
 	//std::vector<int> x{ 1,100,5,2,3 };
 	//sort::f_r_ps(x);
-
+	std::unordered_set<int> x{ 2,3,4,5,6 };
+	for (int x1 : x)
+	{
+		std::cout << x1;
+	}
 
 	return 0;
 }
