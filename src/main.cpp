@@ -6,20 +6,20 @@
 
 int main()
 {
-	//测试排序
-	auto vecs = random_vec_generator(1000, 20, 0, 200);
-	for (const auto& vec : vecs)
-	{
-		auto v1 = vec;
-		auto v2 = vec;
-		sort::radix_sort(v1);
-		std::sort(v2.begin(), v2.end());
-		if (v1 != v2)
-		{
-			std::cout << "g";
-			print_vec(vec);
-		}
-	}
+	////测试排序
+	//auto vecs = random_vec_generator(1000, 20, 0, 200);
+	//for (const auto& vec : vecs)
+	//{
+	//	auto v1 = vec;
+	//	auto v2 = vec;
+	//	sort::radix_sort(v1);
+	//	std::sort(v2.begin(), v2.end());
+	//	if (v1 != v2)
+	//	{
+	//		std::cout << "g";
+	//		print_vec(vec);
+	//	}
+	//}
 
 	//测试xor
 	/*std::vector<int> x{ 1,1,1,2,2,3,3,120,120,0,0,0,0,99,99,-100,-100,-26,-26 };
@@ -35,11 +35,13 @@ int main()
 	//测试小和,逆序对
 	//std::vector<int> x{ 1,100,5,2,3 };
 	//sort::f_r_ps(x);
-	std::unordered_set<int> x{ 2,3,4,5,6 };
-	for (int x1 : x)
-	{
-		std::cout << x1;
-	}
+	//std::unordered_set<int> x{ 2,3,4,5,6 };
+	//for (int x1 : x)
+	//{
+	//	std::cout << x1;
+	//}
 
+	auto l = list::make_list({ 1,1,2,1 });
+	bool x = list::is_symmetry_list(l);
 	return 0;
 }
